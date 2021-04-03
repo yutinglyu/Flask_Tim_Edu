@@ -45,14 +45,14 @@
             </div>
 
             <small class="text-muted ml-2">
-                <a href="{{ url_for('reset_request') }}">忘记密码？点我找回</a>
+                <a href="{{ url_for('users.reset_request') }}">忘记密码？点我找回</a>
             </small>
         </form>
     </div>
 
     <div class="boder-top pt-3">
         <small class="text-muted">
-            还没注册账户？<a class="ml-2" href="{{ url_for('register') }}">点我注册</a>
+            还没注册账户？<a class="ml-2" href="{{ url_for('users.register') }}">点我注册</a>
         </small>
     </div>
 {% endblock %}

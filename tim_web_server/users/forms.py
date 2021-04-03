@@ -1,7 +1,7 @@
-from flask_wtf import FlaskForm
-from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from flask_wtf import FlaskForm
+from flask_wtf.file import FileAllowed, FileField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from tim_web_server.models import User
 
@@ -51,12 +51,6 @@ class LoginForm(FlaskForm):
     password = PasswordField("密码", validators=[DataRequired()])
     remember = BooleanField("记住密码")
     submit = SubmitField("点击登录")
-
-
-class PostForm(FlaskForm):
-    title = StringField("文章标题", validators=[DataRequired(message="请填写标题")])
-    content = TextAreaField("文章内容", validators=[DataRequired(message="请填写内容")])
-    submit = SubmitField("点我发表文章")
 
 
 class RequestResetForm(FlaskForm):
